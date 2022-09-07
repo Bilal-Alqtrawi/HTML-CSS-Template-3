@@ -148,6 +148,35 @@ ul {
 
 }
 
+.spikes {
+    background-color: var(--section-background-color);
+    background-image: linear-gradient(135deg,white 25%,transparent 25%),
+    linear-gradient(225deg,white 25%,transparent 25%) ;
+    background-size: 40px 40px;
+    width: 100%;
+    height: 30px;
+}
+
+.dots {
+    background-image: url(../Images/dots.png);
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 185px;
+    position: absolute;
+    z-index: -1;
+}
+
+.dots-up {
+    top: 200px;
+    right: .5px;
+}
+
+.dots-down {
+    bottom: 200px;
+    left: .5px;
+}
+
+/* Media Query :*/
 /* Small */
 @media (min-width: 768px) {
     .container {
@@ -166,6 +195,12 @@ ul {
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
+    }
+}
+
+@media (max-width:1199px) {
+    .dots {
+        display: none;
     }
 }
 
@@ -1458,38 +1493,6 @@ header .main-nav li:last-of-type:hover .mega-menu {
     position: relative;
 }
 
-.events::before {
-    content: "";
-    background-image: url(../Images/dots.png);
-    width: 175px;
-    height: 175px;
-    position: absolute;
-    right: 1px;
-    top: 255px;
-    background-size: cover;
-}
-
-.events::after {
-    content: "";
-    background-image: url(../Images/dots.png);
-    width: 175px;
-    height: 175px;
-    position: absolute;
-    left: 1px;
-    bottom: 200px;
-    background-size: cover;
-}
-
-@media (max-width:991px) {
-    .events::before {
-        display: none;
-    }
-
-    .events::after {
-        display: none;
-    }
-}
-
 .events .container {
     display: flex;
     align-items: center;
@@ -1652,28 +1655,7 @@ header .main-nav li:last-of-type:hover .mega-menu {
     padding-bottom: var(--section-padding);
     background-color: var(--section-background-color);
     position: relative;
-}
-
-.pricing::before {
-    content: "";
-    background-image: url(../Images/dots.png);
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    right: 1px;
-    top: 255px;
-    background-size: cover;
-}
-
-.pricing::after {
-    content: "";
-    background-image: url(../Images/dots.png);
-    width: 180px;
-    height: 180px;
-    position: absolute;
-    left: 1px;
-    bottom: 200px;
-    background-size: cover;
+    z-index: 1;
 }
 
 .pricing .container {
@@ -2061,9 +2043,11 @@ header .main-nav li:last-of-type:hover .mega-menu {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 .discount .Image img {
     max-width: 300px;
 }
+
 .discount .Image {
     flex-basis: 50%;
     display: flex;
@@ -2076,11 +2060,13 @@ header .main-nav li:last-of-type:hover .mega-menu {
     -webkit-animation: change-background 10s linear;
     z-index: 1;
 }
+
 @media (max-width:767px) {
     .discount .Image {
         flex-basis: 100%;
     }
 }
+
 .discount .Image::before {
     content: "";
     background-color: rgb(23 135 224 / 97%);
@@ -2091,7 +2077,9 @@ header .main-nav li:last-of-type:hover .mega-menu {
     top: 0;
     z-index: -1;
 }
+
 @keyframes change-background {
+
     0%,
     100% {
         background-image: url(../Images/discount-background1.jpg);
@@ -2101,6 +2089,7 @@ header .main-nav li:last-of-type:hover .mega-menu {
         background-image: url(../Images/discount-background2.jpg);
     }
 }
+
 .discount .content {
     color: white;
     display: flex;
@@ -2109,15 +2098,18 @@ header .main-nav li:last-of-type:hover .mega-menu {
     position: relative;
     padding: 0 20px;
 }
+
 .discount .content h2 {
     font-size: 40px;
     letter-spacing: -2px;
 }
+
 .discount .content p {
     font-size: 18px;
     text-align: center;
     line-height: 1.5;
 }
+
 .discount .form {
     flex-basis: 50%;
     display: flex;
@@ -2125,25 +2117,30 @@ header .main-nav li:last-of-type:hover .mega-menu {
     align-items: center;
     padding-bottom: 50px;
 }
+
 @media (max-width:767px) {
     .discount .form {
-        flex-basis:100% ;
+        flex-basis: 100%;
     }
 }
+
 .discount .form .content h2 {
     color: black;
 }
-.discount  form {
+
+.discount form {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
-.discount form  textarea {
+
+.discount form textarea {
     resize: none;
 }
-.discount form  input,
-.discount form  textarea{
+
+.discount form input,
+.discount form textarea {
     caret-color: var(--main-color);
     display: block;
     width: 300px;
@@ -2151,13 +2148,15 @@ header .main-nav li:last-of-type:hover .mega-menu {
     padding: 15px;
     background-color: #f9f9f9;
     border: none;
-    border-bottom: 1px solid #CCC ;
+    border-bottom: 1px solid #CCC;
 }
-.discount form  input:focus,
-.discount form  textarea:focus {
+
+.discount form input:focus,
+.discount form textarea:focus {
     outline: none;
 }
-.discount form  input:last-child {
+
+.discount form input:last-child {
     background-color: var(--main-color);
     font-weight: bold;
     color: white;
@@ -2168,10 +2167,12 @@ header .main-nav li:last-of-type:hover .mega-menu {
     -ms-transition: var(--main-transition);
     -o-transition: var(--main-transition);
 }
-.discount form  input:last-child:hover {
+
+.discount form input:last-child:hover {
     cursor: pointer;
     background-color: #1787e0;
 }
+
 /* End Discount */
 /* Start Footer */
 footer {
@@ -2179,33 +2180,40 @@ footer {
     background-color: #191919;
     position: relative;
 }
+
 @media (max-width:767px) {
     footer {
         text-align: center;
     }
 }
+
 footer .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 40px;
 }
+
 footer .foot .title {
     color: white;
     font-size: 50px;
-    margin:0 0 30px ;
+    margin: 0 0 30px;
 }
+
 footer .foot .social {
     display: flex;
 }
+
 @media (max-width:767px) {
     footer .foot .social {
         justify-content: center;
     }
 }
-footer .foot .social li  {
+
+footer .foot .social li {
     margin-right: 10px;
-}    
-footer .foot .social li a  {
+}
+
+footer .foot .social li a {
     font-size: 20px;
     color: #b9b9b9;
     background-color: #313131;
@@ -2220,35 +2228,43 @@ footer .foot .social li a  {
     -ms-transition: var(--main-transition);
     -o-transition: var(--main-transition);
 }
+
 footer .foot .social li:first-child:hover a {
     background-color: var(--main-color-alt);
 }
+
 footer .foot .social li:nth-child(2):hover a {
     background-color: var(--main-color);
 }
+
 footer .foot .social li:last-child:hover a {
     background-color: red;
 }
+
 footer .foot.one p,
 footer .foot.two ul li a,
 footer .foot.three span {
     color: #b9b9b9;
 }
+
 footer .foot.one p {
     line-height: 2;
 }
+
 footer .foot.two ul li i {
     color: var(--main-color);
 }
+
 footer .foot.two ul li a {
-    transition:color  var(--main-transition);
-    -webkit-transition:color  var(--main-transition);
-    -moz-transition:color  var(--main-transition);
-    -ms-transition:color  var(--main-transition);
-    -o-transition:color  var(--main-transition);
+    transition: color var(--main-transition);
+    -webkit-transition: color var(--main-transition);
+    -moz-transition: color var(--main-transition);
+    -ms-transition: color var(--main-transition);
+    -o-transition: color var(--main-transition);
 }
+
 footer .foot.two ul li {
-    border-bottom:1px solid #444 ;
+    border-bottom: 1px solid #444;
     padding: 15px 0;
     transition: var(--main-transition);
     -webkit-transition: var(--main-transition);
@@ -2256,43 +2272,53 @@ footer .foot.two ul li {
     -ms-transition: var(--main-transition);
     -o-transition: var(--main-transition);
 }
-footer .foot.two ul li:hover   {
+
+footer .foot.two ul li:hover {
     padding-left: 15px;
 }
+
 footer .foot.two ul li:hover a {
     color: white;
 }
+
 footer .foot.two ul li:last-of-type {
-    border-bottom:none ;
-}  
+    border-bottom: none;
+}
+
 footer .foot.three address .info {
     display: flex;
     align-items: center;
-    margin-bottom:30px;
+    margin-bottom: 30px;
     gap: 15px;
 }
+
 footer .foot.three address .info .line {
     flex: 1;
     line-height: 1.7;
 }
+
 footer .foot.three address .info i {
     color: var(--main-color);
-    font-size:25px ;
+    font-size: 25px;
 }
+
 footer .foot.three address .info span {
     display: block;
 }
+
 @media (max-width:767px) {
     footer .foot.three address .info {
         flex-direction: column;
     }
 }
+
 footer .foot.four img {
     width: 78px;
     /* height: 78px; */
     border: 3px solid white;
     margin: 2px;
 }
+
 footer .copyright {
     padding: 25px 0;
     text-align: center;
@@ -2300,4 +2326,5 @@ footer .copyright {
     margin: 40px 0 0;
     border-top: 1px solid #444;
 }
+
 /* End Footer */
